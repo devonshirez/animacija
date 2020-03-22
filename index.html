@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Animation</title>
+    <meta charset="UTF-8">
+
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    background: #050210;
+}
+
+#wrapper {
+    width: 450px;
+    height: 450px;
+    background: #050210;
+    margin: 100px auto;
+    position: relative;
+}
+
+.krug {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    animation-name: circle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.krug::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    border-radius: 100%;
+    filter: blur(40px);
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    opacity: 0.5;
+}
+
+.krug2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: #050210;
+    position: absolute;
+    left: 75px;
+    top: 75px;
+}
+
+.krug3 {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: #0f072c;
+    position: absolute;
+    animation-name: pulse;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        opacity: 30%;
+    }
+    70% {
+        opacity: 30%;
+    }
+    80% {
+        opacity: 20%;
+    }
+    90% {
+        opacity: 10%;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 10%;
+    }
+}
+</style>
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="krug"></div>
+
+        <div class="krug2">
+            <div class="krug3"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
